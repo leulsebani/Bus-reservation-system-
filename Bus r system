@@ -1,0 +1,190 @@
+#include <iostream>
+using namespace std;
+
+const char* places[10] = {
+    "Addis Ababa", "Hawassa", "Arbaminch", "Afar", "mekele",
+    "bahir dar", "harrar", "gambela", "debre markos", "welkite"
+};
+
+
+const char* days[7] = {
+    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+};
+
+const char* times[3] = {
+    "Morning (8:00 AM)",
+    "Afternoon (12:00 PM)",
+    "Evening (6:00 PM)"
+};
+
+int main() {
+    char regUsername[20], regPassword[20];
+    char loginUsername[20], loginPassword[20];
+
+    // Registration
+    cout << "=====> Welcome to G6 bus reservation system <===="<< endl;
+    cout << endl;
+    cout << "=== User Registration ===\n";
+    cout << "Enter a username: ";
+    cin >> regUsername;
+    cout << "Enter a password: ";
+    cin >> regPassword;
+
+    // Login
+    cout << "\n=== User Login ===\n";
+    bool loggedIn = false;
+    for (int attempts = 3; attempts > 0; attempts--) {
+        cout << "Username: ";
+        cin >> loginUsername;
+        cout << "Password: ";
+        cin >> loginPassword;
+
+        // Compare character arrays manually
+        bool userMatch = true, passMatch = true;
+
+        for (int i = 0; i < 20; i++) {
+            if (regUsername[i] != loginUsername[i]) {
+                userMatch = false;
+                break;
+            }
+            if (regUsername[i] == '\0') break;
+        }
+
+        for (int i = 0; i < 20; i++) {
+            if (regPassword[i] != loginPassword[i]) {
+                passMatch = false;
+                break;
+            }
+            if (regPassword[i] == '\0') break;
+        }
+
+        if (userMatch && passMatch) {
+            cout << "\nLogin successful!\n";
+            loggedIn = true;
+            break;
+        } else {
+            cout << "Invalid credentials. Attempts left: " << attempts - 1 << "\n";
+        }
+    }
+
+    if (!loggedIn) {
+        cout << "\nToo many failed attempts. Exiting...\n";
+        return 0;
+    }
+
+    // Main Menu
+    int choice;
+    cout << "\n=== Bus Reservation System ===\n";
+    cout << "1) Reservation\n";
+    cout << "2) Information\n";
+    cout << "3) Exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    switch (choice) {
+        case 1: {
+            int source, destination, confirm, day, seats, timeChoice;
+
+            while (true) {
+                // Select source
+                cout << "\nSelect Starting Point:\n";
+                for (int i = 0; i < 10; i++) {
+                    cout << i + 1 << ") " << places[i] << endl;
+                }
+                cout << "Enter number (1-10): ";
+                cin >> source;
+
+                if (source < 1 || source > 10) {
+                    cout << "Invalid choice. Try again.\n";
+                    continue;
+                }
+
+                // Select destination
+                cout << "\nSelect Destination Point:\n";
+                for (int i = 0; i < 10; i++) {
+                    if (i == source - 1)
+                        cout << i + 1 << ") " << places[i] << " (Selected as source - Not allowed)" << endl;
+                    else
+                        cout << i + 1 << ") " << places[i] << endl;
+                }
+                cout << "Enter number (1-10): ";
+                cin >> destination;
+
+                if (destination < 1 || destination > 10 || destination == source) {
+                    cout << "Invalid choice. Try again.\n";
+                    continue;
+                }
+
+                // Confirm selection
+                cout << "\nYou chose to go from " << places[source - 1]
+                     << " to " << places[destination - 1] << ".\n";
+                cout << "To confirm press 1, or press 0 to change: ";
+                cin >> confirm;
+
+                if (confirm == 1) {
+                    break;
+                }
+            }
+
+            // Select number of seats
+            cout << "\nEnter number of seats you want to book: ";
+            cin >> seats;
+
+            if (seats <= 0) {
+                cout << "Invalid number of seats.\n";
+                return 0;
+            }
+
+            // Select day of travel
+            cout << "\nChoose Day of Travel:\n";
+            for (int i = 0; i < 7; i++) {
+                cout << i + 1 << ") " << days[i] << endl;
+            }
+            cout << "Enter number (1-7): ";
+            cin >> day;
+
+            if (day < 1 || day > 7) {
+                cout << "Invalid day selected.\n";
+                return 0;
+            }
+
+            // Select time of travel
+            cout << "\nChoose Time of Travel:\n";
+            for (int i = 0; i < 3; i++) {
+                cout << i + 1 << ") " << times[i] << endl;
+            }
+            cout << "Enter number (1-3): ";
+            cin >> timeChoice;
+
+            if (timeChoice < 1 || timeChoice > 3) {
+                cout << "Invalid time selected.\n";
+                return 0;
+            }
+
+            cout << "\nReservation Confirmed!\n";
+            cout << "From: " << places[source - 1] << "\n";
+            cout << "To: " << places[destination - 1] << "\n";
+            cout << "Day: " << days[day - 1] << "\n";
+            cout << "Time: " << times[timeChoice - 1] << "\n";
+            cout << "Seats: " << seats << "\n";
+
+            break;
+        }
+
+        case 2:
+            cout << "\nThis is a simple bus reservation system.\nYou can choose source, destination, travel day, and time.\n";
+            break;
+        
+        case 3:
+            cout << "\nThank you for using the Bus Reservation System.\n";
+            cout << "Goodbye!\n";
+          
+            break;
+
+        default:
+            cout << "Invalid option selected.\n";
+            break;
+    }
+
+    return 0;
+}
