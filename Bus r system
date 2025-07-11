@@ -174,7 +174,7 @@ int main() {
                 cout << "From: " << places[source - 1] << "\n";
                 cout << "To: " << places[destination - 1] << "\n";
                 cout << "Day: " << days[day - 1] << "\n";
-                cout << "Time: " << time[timeChoice - 1] << "\n";
+                cout << "Time: " << times[timeChoice - 1] << "\n";
                 cout << "Seats: " << seats << "\n";
                 break;
             }
