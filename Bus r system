@@ -127,6 +127,10 @@ int main() {
                             cout << "Invalid number of seats.\n";
                             continue ;
                            }
+                        else{  
+                          break;
+                        }
+                         
                     }
 
                     // Select day of travel
