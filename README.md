@@ -35,7 +35,7 @@ AKREM KIBRACHEW                RCD/0893/2017                          	Progmez-7
 
 KASU GETACHEW	                 RCD/1810/2017	                           Kasu16
 
-DAGMAWIT WASSE	               RCD/0009/2017	                            Dagiwas21
+DAGMAWIT WASSE	               RMD/0009/2017	                            Dagiwas21
 
 NOAH SEBSEBE	                 RCD/2564/2016	                           @draxnide
 
