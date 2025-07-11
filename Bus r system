@@ -119,12 +119,14 @@ int main() {
                     }
 
                     // Select number of seats
-                    cout << "\nEnter number of seats you want to book: ";
-                    cin >> seats;
-
-                    if (seats <= 0) {
-                        cout << "Invalid number of seats.\n";
-                        return 0;
+                    while(true){
+                        cout << "\nEnter number of seats you want to book: ";
+                        cin >> seats;
+    
+                        if (seats <= 0) {
+                            cout << "Invalid number of seats.\n";
+                            continue ;
+                           }
                     }
 
                     // Select day of travel
