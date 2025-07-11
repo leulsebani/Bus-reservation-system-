@@ -103,7 +103,7 @@ int main() {
                 cout << "\nSelect Destination Point:\n";
                 for (int i = 0; i < 10; i++) {
                     if (i == source - 1)
-                        cout << i + 1 << ") " << places[i] << " (Selected as source - Not allowed)" << endl;
+                        cout << i + 1 << ") " << places[i] << " (Selected as your starting point - Not allowed)" << endl;
                     else
                         cout << i + 1 << ") " << places[i] << endl;
                 }
