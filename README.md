@@ -25,20 +25,20 @@ Case 3: Exit – Terminates the program and exits the system.
 
  
  
- NAME                               ID NO	              Github username
+ NAME                               ID NO	                            Github username
 
-LEUL ABOWORK	                 RCD/1643/2017	            leulsebani
+LEUL ABOWORK	                 RCD/1643/2017	                          leulsebani
 
-EHAB NURAYNI	                 RCD/1697/2017	            Ehab73
+EHAB NURAYNI	                 RCD/1697/2017	                           Ehab73
 
-AKREM KIBRACHEW                RCD/0893/2017             	Progmez-79
+AKREM KIBRACHEW                RCD/0893/2017                          	Progmez-79
 
-KASU GETACHEW	                 RCD/1810/2017	            Kasu16
+KASU GETACHEW	                 RCD/1810/2017	                           Kasu16
 
-DAGMAWIT WASSE	               RCD/0009/2017	            Dagiwas21
+DAGMAWIT WASSE	               RCD/0009/2017	                            Dagiwas21
 
-NOAH SEBSEBE	                 RCD/2564/2016	            @draxnide
+NOAH SEBSEBE	                 RCD/2564/2016	                           @draxnide
 
-BEREKET GETU 	                 RCD/0898 /2017	            ......
+BEREKET GETU 	                 RCD/0898 /2017	                          ......
 
-Zemichael mekonnen	           RCD/2636/2016	            Zemichael34
+Zemichael mekonnen	           RCD/2636/2016	                           Zemichael34
